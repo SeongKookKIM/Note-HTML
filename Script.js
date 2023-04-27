@@ -19,6 +19,7 @@ const months = [
   "11월",
   "12월",
 ];
+const notes = JSON.parse(localStorage.getItem("notes") || "[]");
 
 addBox.addEventListener("click", () => {
   popupBox.classList.add("show");
@@ -26,6 +27,13 @@ addBox.addEventListener("click", () => {
 closeIcon.addEventListener("click", () => {
   popupBox.classList.remove("show");
 });
+
+function showNotes() {
+  notes.forEach((note) => {
+    console.log(note);
+  });
+}
+showNotes();
 
 addBtn.addEventListener("click", () => {
   let noteTitle = titleTag.value;
@@ -43,8 +51,8 @@ addBtn.addEventListener("click", () => {
       date: `${year}년 ${month} ${day}일`,
     };
 
-    const notes = [];
     notes.push(noteInfo);
     localStorage.setItem("notes", JSON.stringify(notes));
+    closeIcon.click();
   }
 });
