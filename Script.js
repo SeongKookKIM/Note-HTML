@@ -25,12 +25,32 @@ addBox.addEventListener("click", () => {
   popupBox.classList.add("show");
 });
 closeIcon.addEventListener("click", () => {
+  titleTag.value = "";
+  descTag.value = "";
   popupBox.classList.remove("show");
 });
 
 function showNotes() {
+  document.querySelectorAll(".note").forEach((note) => note.remove());
+
   notes.forEach((note) => {
-    console.log(note);
+    let liTag = `
+    <li class="note">
+    <div class="details">
+      <p>${note.title}</p>
+      <span
+        >${note.description}</span
+      >
+    </div>
+    <div class="bottom-content">
+      <span>${note.date}</span>
+      <div class="settings">
+        <i class="uil uil-ellipsis-h"></i>
+      </div>
+    </div>
+  </li>
+    `;
+    addBox.insertAdjacentHTML("afterend", liTag);
   });
 }
 showNotes();
@@ -54,5 +74,6 @@ addBtn.addEventListener("click", () => {
     notes.push(noteInfo);
     localStorage.setItem("notes", JSON.stringify(notes));
     closeIcon.click();
+    showNotes();
   }
 });
