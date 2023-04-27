@@ -82,9 +82,7 @@ body {
   font-size: 15px;
   cursor: pointer;
 }
-.bottom-content .settings:hover .menu {
-  transform: scale(1);
-}
+
 .settings .menu {
   position: absolute;
   bottom: 0;
@@ -96,6 +94,9 @@ body {
   transform: scale(0);
   transform-origin: bottom right;
   transition: transform 0.2s ease;
+}
+.settings.add .menu {
+  transform: scale(1);
 }
 .settings .menu li {
   height: 25px;
