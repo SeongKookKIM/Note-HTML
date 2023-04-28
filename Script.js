@@ -103,13 +103,6 @@ function updateNote(noteId, title, desc) {
 addBtn.addEventListener("click", () => {
   let noteTitle = titleTag.value;
   let noteDesc = descTag.value;
-  let confirmUpdate = false;
-
-  if (!confirmUpdate) {
-    confirm("수정하시겠습니까?");
-  } else {
-    return;
-  }
 
   if (noteTitle || noteDesc) {
     let dateObj = new Date();
