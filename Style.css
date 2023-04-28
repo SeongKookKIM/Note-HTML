@@ -8,6 +8,9 @@
 }
 body {
   background: #88abff;
+  display: flex;
+  justify-content: center;
+  align-items: ce;
 }
 .wrapper {
   margin: 50px;
