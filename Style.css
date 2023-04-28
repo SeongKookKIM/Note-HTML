@@ -56,6 +56,10 @@ body {
   justify-content: space-between;
   flex-direction: column;
 }
+.note .details {
+  max-height: 165px;
+  overflow-y: hidden;
+}
 .note p {
   font-size: 22px;
   font-weight: 500;
