@@ -8,9 +8,13 @@
 }
 body {
   background: #88abff;
-  display: flex;
-  justify-content: center;
-  align-items: ce;
+}
+@media screen and (max-width: 650px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .wrapper {
   margin: 50px;
